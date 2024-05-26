@@ -1,6 +1,7 @@
 # Proyecto final algebra lineal (PFAL)-(PizzApp)
 
 Todo el codigo contenido en este repositorio está bajo la MIT License.
+
 Este proyecto consiste en la abstraccion de un negocio de pizzas para ejemplificar la aplicabilidad de algebra lineal en programacion.
 
 ## Estructuras de datos
@@ -134,15 +135,15 @@ print(f"Total ventas (ciclo): {iTotal_pizza}")
 
 ```
 
+### Resolución de sistemas
+
+A unas ganancias obtenidas calcular la cantidad de pizzas y sus tipos.
+
 ### ScreenShots
 
 ![Menu principal](img/principal.png)
 
 ![Menu de compra](img/compra.png)
-
-### Resolución de sistemas
-
-A unas ganancias obtenidas calcular la cantidad de pizzas y sus tipos.
 
 ## Librerias utilizadas y su proposito
 
@@ -170,6 +171,11 @@ pip install -r requirements.txt
 
 Si no se tiene **pip** instalado, revisar la [documentación](https://pip.pypa.io/en/stable/installation/)
 
+Para la visualizacion correcta de las tablas construidas se debe utilizar una fuente monoespaciada. esta app hace uso de:
+
+- [Tipografia (Fira Code)](https://github.com/tonsky/FiraCode)
+  - [Google Fonts](https://fonts.google.com/specimen/Fira+Code)
+
 ## Uso
 
 El repositorio contiene estos archivos.
@@ -189,6 +195,8 @@ Archivo principal del proyecto, construido a partir de OOP, contiene la estructu
 - [Tema (marsh)](https://github.com/a13xe/CTkThemesPack)
 - [Lista de reproduccion sobre CustomTkinter](https://www.youtube.com/watch?v=Y01r643ckfI&list=PLfZw_tZWahjxJl81b1S-vYQwHs_9ZT77f)
 - [TkinterDesigner (No utilizado en el proyecto)](https://github.com/ParthJadhav/Tkinter-Designer)
+- [Tipografia (Fira Code)](https://github.com/tonsky/FiraCode)
+  - [Google Fonts](https://fonts.google.com/specimen/Fira+Code)
 
 ## Todo
 
@@ -201,4 +209,5 @@ Archivo principal del proyecto, construido a partir de OOP, contiene la estructu
 - [ ] Añadir iconos y/o imagenes
 - [ ] Pensar en una ventana de administracion
 
-Este proyecto no pretende demostrar buenas practicas de programacion, ni en la libreria construida, ni en su interfaz grafica.
+>[!NOTE]
+> Este proyecto no pretende demostrar buenas practicas de programacion, ni en la libreria construida, ni en su interfaz grafica. Primera y ultima vez utilizando CustomTkinter.
