@@ -139,7 +139,11 @@ A unas ganancias obtenidas calcular la cantidad de pizzas y sus tipos que se pue
 
 ## Todo
 
-- [ ] Creacion de la pantalla de compra
+- [x] Creacion de la pantalla de compra
+- [x] Documentar el codigo.
 - [ ] Creacion de la ventana de resolucion de sistemas
+
+### Opcionales
+
 - [ ] Añadir iconos y/o imagenes
-- [ ] Pensar en una ventana de administracion.
+- [ ] Pensar en una ventana de administracion

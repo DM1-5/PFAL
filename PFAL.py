@@ -58,8 +58,9 @@ class PFAL:
       print("No hay suficiente inventario")
       return -1
 
-  def agregar(self,compras):
+  def comprar(self,lista):
     """Agrega ingredientes de la compra al inventario"""
+    compras = np.array(lista)
     if (verificar(compras)):
       self.inventario = self.inventario + compras
       return 0
@@ -95,10 +96,7 @@ class PFAL:
     pretty_table.add_row(self.ventasTipo())
     return pretty_table.get_string()
 
-print("Cargado correctamente")
+print("Libreria PFAL cargada correctamente")
 
 if __name__ == "__main__":
-  app = PFAL()
-  print(app.str_ingredientes(0))
-  print(app.str_inventario())
-  print(app.str_ventas())
+  print("Hello world!")
