@@ -121,7 +121,7 @@ class Compra(ctk.CTkToplevel):
         super().__init__()
         self.error = error # Variable que indica si hay un error en la compra
         self.info = info # Referencia a la instancia de la clase InfoFrame
-        self.geometry("350x400")
+        self.geometry("325x400")
         self.resizable(False, False)
         self.title("Compra")
 

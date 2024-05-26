@@ -1,28 +1,29 @@
-# Proyecto final algebra lineal
+# Proyecto final algebra lineal (PFAL)-(PizzApp)
 
-Este proyecto consiste en la abstraccion de un negocio de pizzas mediante algebra lineal
+Todo el codigo contenido en este repositorio está bajo la MIT License.
+Este proyecto consiste en la abstraccion de un negocio de pizzas para ejemplificar la aplicabilidad de algebra lineal en programacion.
 
-Tendrá las siguientes estructuras de datos:
+## Estructuras de datos
 
-## Matriz Pizzas
+### Matriz Pizzas
 
 Cada una de las componentes del vector **pizza[i]** son la cantidad de ingredientes necesarios para crearla.
 
-## Vectores
+### Vectores
 
-### Ventas
+#### Ventas
 
 Representa el numero de unidades vendidas de cada tipo de pizza.
 
-### Precios
+#### Precios
 
 Representa el valor unitario de cada tipo pizza.
 
-### Inventario
+#### Inventario
 
 Representa la cantidad de ingredientes disponibles.
 
-### Compras
+#### Compras
 
 Representa la cantidad de ingredientes comprados.
 
@@ -50,7 +51,7 @@ Suma del vector **compras** al vector **inventario**.
 
 ``` python
 
-#Aumentar el inventario con las compras
+#Aumenta el inventario con las compras
 nInventario = inventario + compras
 print(f"Inventario+ (numpy):{nInventario} ")
 
@@ -68,11 +69,11 @@ print(f"Inventario+ (ciclo): {iInventario}")
 
 ### Resta
 
-Resta del vector **inventario** al vector **pizza[i]** pedida.
+Resta del vector **inventario** al vector **pizza[i]** fabricada.
 
 ``` python
 
-# Descontar las pizzas vendidas del inventario
+# Descuenta las pizzas vendidas del inventario
 nDescuento = inventario - pizzas[1]
 print(f"Inventario- (numpy): {nDescuento} ")
 
@@ -133,9 +134,61 @@ print(f"Total ventas (ciclo): {iTotal_pizza}")
 
 ```
 
-### Resolucion de sistemas
+### ScreenShots
 
-A unas ganancias obtenidas calcular la cantidad de pizzas y sus tipos que se pueden realizar.
+![Menu principal](img/principal.png)
+
+![Menu de compra](img/compra.png)
+
+### Resolución de sistemas
+
+A unas ganancias obtenidas calcular la cantidad de pizzas y sus tipos.
+
+## Librerias utilizadas y su proposito
+
+### [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter)
+
+Libreria para la creacion de la interfaz grafica
+
+### [Numpy](https://numpy.org/)
+
+Libreria que contiene los metodos para la creacion de las estructuras y operaciones de algebra lineal implementadas
+
+### [PrettyTable](https://pypi.org/project/prettytable/)
+
+Libreria para organizar en tablas ascii la información.
+
+## Instalacion
+
+Instalar con **pip** las librerias requeridas
+
+``` powershell
+
+pip install -r requirements.txt
+
+```
+
+Si no se tiene **pip** instalado, revisar la [documentación](https://pip.pypa.io/en/stable/installation/)
+
+## Uso
+
+El repositorio contiene estos archivos.
+
+### [PFAL](PFAL.py)
+
+Librearia construida a partir de OOP, contiene las estructuras y metodos explicados anteriormente.
+
+### [PFAL_GUI](PFAL_GUI.py)
+
+Archivo principal del proyecto, construido a partir de OOP, contiene la estructura de la interfaz grafica, importa la libreria anterior. Este es el archivo que debe ser ejecutado para el inicio de la aplicación.
+
+## Referencias adicionales
+
+- [Documentación de CustomTkinter](https://customtkinter.tomschimansky.com/documentation/)
+- [Ejemplo de formulario GUI con Customtkinter](https://www.geeksforgeeks.org/build-a-basic-form-gui-using-customtkinter-module-in-python/)
+- [Tema (marsh)](https://github.com/a13xe/CTkThemesPack)
+- [Lista de reproduccion sobre CustomTkinter](https://www.youtube.com/watch?v=Y01r643ckfI&list=PLfZw_tZWahjxJl81b1S-vYQwHs_9ZT77f)
+- [TkinterDesigner (No utilizado en el proyecto)](https://github.com/ParthJadhav/Tkinter-Designer)
 
 ## Todo
 
@@ -147,3 +200,5 @@ A unas ganancias obtenidas calcular la cantidad de pizzas y sus tipos que se pue
 
 - [ ] Añadir iconos y/o imagenes
 - [ ] Pensar en una ventana de administracion
+
+Este proyecto no pretende demostrar buenas practicas de programacion, ni en la libreria construida, ni en su interfaz grafica.
