@@ -1,4 +1,5 @@
 import numpy as np
+import prettytable as pt
 
 def verificar(vector):
   """Verifica que todos los elementos de un vector sean enteros positivos"""
@@ -9,7 +10,7 @@ def verificar(vector):
 class PFAL: 
   def __init__(self):
     self.pizzas = np.array([[5,3,3],[4,6,2],[7,4,2]])
-    self.ventas = np.array([1,2,3])
+    self.ventas = np.array([0,0,0])
     self.precios = np.array([100,200,300])
     self.inventario = np.array([10,10,10])
 
@@ -47,11 +48,11 @@ class PFAL:
     """Calcula el valor de las ventas por tipo de pizza"""
     return self.ventas * self.precios
     
-  def descontar(self, pizza):
-    """Descuenta los ingredientes necesarios para la pizza escogida"""
-    temp = self.inventario - pizza
+  def fabricar(self, tipo):
+    temp = self.inventario - self.pizzas[tipo]
     if (verificar(temp)):
       self.inventario = temp
+      self.ventas[tipo] = self.ventas[tipo] + 1
       return 0
     else:
       print("No hay suficiente inventario")
@@ -66,29 +67,38 @@ class PFAL:
       print("No se puede agregar")
       return -1
     
-  def ingredientes(self, tipo):
+  def str_ingredientes(self, tipo):
     """Muestra una cadena de texto con los ingredientes necesarios para crear una pizza"""
-    return f"Harina: {self.pizzas[tipo][0]}, Queso: {self.pizzas[tipo][1]}, Tomate: {self.pizzas[tipo][2]}"
+    pretty_table = pt.PrettyTable()
+    pretty_table.field_names = ["Harina", "Queso", "Tomate"]
+    pretty_table.add_row(self.pizzas[tipo])
+    return pretty_table.get_string()
   
-  def strinventario(self):
+  def str_inventario(self):
     """Muestra una cadena de texto con los ingredientes en el inventario"""
-    return f"Harina: {self.inventario[0]}, Queso: {self.inventario[1]}, Tomate: {self.inventario[2]}"
+    pretty_table = pt.PrettyTable()
+    pretty_table.field_names = ["Harina", "Queso", "Tomate"]
+    pretty_table.add_row(self.inventario)
+    return pretty_table.get_string()
   
+  def str_ventas(self):
+    """Muestra una cadena de texto con las ventas realizadas"""
+    pretty_table = pt.PrettyTable()
+    pretty_table.field_names = ["Pizza 1", "Pizza 2", "Pizza 3"]
+    pretty_table.add_row(self.ventas)
+    return pretty_table.get_string()
+  
+  def str_ventasTipo(self):
+    """Muestra una cadena de texto con las ventas por tipo de pizza"""
+    pretty_table = pt.PrettyTable()
+    pretty_table.field_names = ["Pizza 1", "Pizza 2", "Pizza 3"]
+    pretty_table.add_row(self.ventasTipo())
+    return pretty_table.get_string()
 
 print("Cargado correctamente")
 
 if __name__ == "__main__":
   app = PFAL()
-  print(app.ingredientes(1))
-  print(app.strinventario())
-  #print(app.total_ventas())
-  #print(app.ventasTipo())
-  #print(app.inventario)
-  app.descontar(np.array([1,2,3]))
-  print(app.inventario)
-  app.agregar(np.array([0.1,2,3]))
-  print(app.inventario)
-  #print(app.inventario)
-  #print(app.getInventario())
-  #app_string = str(app)
-  #print(app_string)
+  print(app.str_ingredientes(0))
+  print(app.str_inventario())
+  print(app.str_ventas())
