@@ -65,11 +65,22 @@ class PFAL:
     else: 
       print("No se puede agregar")
       return -1
+    
+  def ingredientes(self, tipo):
+    """Muestra una cadena de texto con los ingredientes necesarios para crear una pizza"""
+    return f"Harina: {self.pizzas[tipo][0]}, Queso: {self.pizzas[tipo][1]}, Tomate: {self.pizzas[tipo][2]}"
+  
+  def strinventario(self):
+    """Muestra una cadena de texto con los ingredientes en el inventario"""
+    return f"Harina: {self.inventario[0]}, Queso: {self.inventario[1]}, Tomate: {self.inventario[2]}"
+  
 
 print("Cargado correctamente")
 
 if __name__ == "__main__":
   app = PFAL()
+  print(app.ingredientes(1))
+  print(app.strinventario())
   #print(app.total_ventas())
   #print(app.ventasTipo())
   #print(app.inventario)
