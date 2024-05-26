@@ -136,3 +136,10 @@ print(f"Total ventas (ciclo): {iTotal_pizza}")
 ### Resolucion de sistemas
 
 A unas ganancias obtenidas calcular la cantidad de pizzas y sus tipos que se pueden realizar.
+
+## Todo
+
+- [ ] Creacion de la pantalla de compra
+- [ ] Creacion de la ventana de resolucion de sistemas
+- [ ] Añadir iconos y/o imagenes
+- [ ] Pensar en una ventana de administracion.
