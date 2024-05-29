@@ -9,9 +9,14 @@ def verificar(vector):
 
 class PFAL: 
   def __init__(self):
-    self.pizzas = np.array([[5,3,3],[4,6,2],[7,4,2]])
+    self.pizzas = np.array([[5,3,3],
+                            [4,6,2],
+                            [7,4,2]])
+    
     self.ventas = np.array([0,0,0])
+
     self.precios = np.array([100,200,300])
+
     self.inventario = np.array([10,10,10])
 
 # getters and setters
@@ -44,11 +49,12 @@ class PFAL:
     """Calcula el valor total de las ventas"""
     return np.dot(self.ventas, self.precios)
 
-  def ventasTipo(self):
+  def ventas_tipo(self):
     """Calcula el valor de las ventas por tipo de pizza"""
     return self.ventas * self.precios
     
   def fabricar(self, tipo):
+    """Fabrica la pizza descontando los ingredientes del inventario."""
     temp = self.inventario - self.pizzas[tipo]
     if (verificar(temp)):
       self.inventario = temp
@@ -100,3 +106,10 @@ print("Libreria PFAL cargada correctamente")
 
 if __name__ == "__main__":
   print("Hello world!")
+  pfal = PFAL()
+  print(pfal.str_inventario())
+  tipo = 2
+  a = np.array([0,0,0])
+  a[tipo] = 1
+  print(a + pfal.inventario)
+  print(a)

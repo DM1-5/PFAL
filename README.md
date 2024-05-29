@@ -46,24 +46,43 @@ compras = np.array([1,2,3])
 
 ## Operaciones de algebra lineal y su utilidad
 
+``` python
+def verificar(vector):
+  """Verifica que todos los elementos de un vector sean enteros positivos"""
+  if (vector < 0).any() or (vector % 1 != 0).any():
+    return False
+  return True
+
+```
+
 ### Suma
 
 Suma del vector **compras** al vector **inventario**.
 
 ``` python
 
-#Aumenta el inventario con las compras
-nInventario = inventario + compras
+def comprar(self,lista):
+    """Agrega ingredientes de la compra al inventario"""
+    compras = np.array(lista) # Convierte una lista en un vector de numpy
+    if (verificar(compras)): 
+      self.inventario = self.inventario + compras # Suma el vector compras al inventario
+      return 0 # Retorna 0 en caso de exito
+    else: 
+      print("No se puede agregar") 
+      return -1 # Retorna -1 en caso de error
+
+nInventario = comprar(self,lista)
 print(f"Inventario+ (numpy):{nInventario} ")
 
-def aumentar(inventario, compras):
-    # ciclo iterando el vector desde el indice 
-    resultado = []
-    for i in range(len(ventas)):
-        resultado.append(inventario[i] + compras[i])
-    return resultado
 
-iInventario = aumentar(inventario, compras)
+def comprar_i(inventario, compras):
+    # ciclo iterando el vector desde el indice 
+    resultado = [] # Creacion de un vector vacio para el resultado
+    for i in range(len(ventas)):
+        resultado.append(inventario[i] + compras[i]) # Añade la suma de cada componente al nuevo vector
+    return resultado # Retorna el vector resultante
+
+iInventario = comprar_i(inventario, compras)
 print(f"Inventario+ (ciclo): {iInventario}")
 
 ```
@@ -74,18 +93,28 @@ Resta del vector **inventario** al vector **pizza[i]** fabricada.
 
 ``` python
 
-# Descuenta las pizzas vendidas del inventario
-nDescuento = inventario - pizzas[1]
-print(f"Inventario- (numpy): {nDescuento} ")
+def fabricar(self, tipo):
+    """Fabrica la pizza descontando los ingredientes del inventario."""
+    temp = self.inventario - self.pizzas[tipo] # Crea un vector temporal con el resultado
+    if (verificar(temp)): # Verifica que el vector no contenga numeros negativos
+      self.inventario = temp # redefine el inventario como el vector temporal
+      self.ventas[tipo] = self.ventas[tipo] + 1 # Aumenta en una unidad el componente del vector ventas.
+      return 0 # Retorna 0 en caso de exito
+    else:
+      print("No hay suficiente inventario")
+      return -1 # Retorna -1 en caso de error
 
-def descontar(inventario, pizza):
+nDescuento = fabricar(inventario, 1)
+print(f"Inventario- (ciclo): {iDescuento}")
+
+def fabricar_i(inventario, tipo):
     # ciclo iterando el vector desde el indice 
-    resultado = []
+    resultado = [] # Creacion de un vector vacio para el resultado
     for i in range(len(ventas)):
-        resultado.append(inventario[i] - pizza[i])
-    return resultado
+        resultado.append(inventario[i] - pizza[tipo])# Añade la resta de cada componente al nuevo vector
+    return resultado # Retorna el vector resultante
 
-iDescuento = descontar(inventario, pizzas[1])
+iDescuento = fabricar_i(inventario, pizzas[1])
 print(f"Inventario- (ciclo): {iDescuento}")
 
 ```
@@ -96,18 +125,21 @@ Producto punto entre el vector **precio** y vector **ventas** para el calculo de
 
 ``` python
 
-# Calcula el total de ventas
-total_ventas = np.dot(ventas,precios)
-print(f"Total de ventas (numpy): {total_ventas}")
+def total_ventas(self):
+    """Calcula el valor total de las ventas"""
+    return np.dot(self.ventas, self.precios) # Retorna el producto punto entre ventas y precios
 
-def total_ventas(ventas, precios):
+ntotal_ventas = total_ventas()
+print(f"Total ventas (numpy): {total_ventas}")
+
+def total_ventas_i(ventas, precios):
     # ciclo iterando el vector desde el indice 
-    total = 0
+    total = 0 # Creacion de una variable para almacenar el total
     for i in range(len(ventas)):
-        total += ventas[i] * precios[i]
-    return total
+        total += ventas[i] * precios[i] # Suma al total la multiplicacion de cada componente en la posicion i de ventas y precios.
+    return total # Retorna el valor resultante
 
-total_ventas = total_ventas(ventas, precios)
+itotal_ventas = total_ventas_i(ventas, precios)
 
 print(f"Total ventas (ciclo): {total_ventas}")
 
@@ -119,18 +151,21 @@ Multiplicacion componente a componente entre el vector **precio** y el vector **
 
 ``` python
 
-#Calcula la cantidad de pizzas vendidas de cada tipo 
-nTotal_pizza = ventas * precios
+def ventas_tipo(self):
+    """Calcula el valor de las ventas por tipo de pizza"""
+    return self.ventas * self.precios # Retorna la multiplicacion por componente 
+    
+nTotal_pizza = ventas_tipo()
 print(f"Ventas por pizza (numpy): {nTotal_pizza} ")
 
-def ventas_tipo(ventas, precios):
+def ventas_tipo_i(ventas, precios):
     # ciclo iterando el vector desde el indice 
-    resultado = []
+    resultado = [] # Creacion de un vector vacio para el resultado
     for i in range(len(ventas)):
-        resultado.append(ventas[i] * precios[i])
-    return resultado
+        resultado.append(ventas[i] * precios[i])# Añade la multiplicacion de cada componente al nuevo vector
+    return resultado # Retorna el vector resultante
 
-iTotal_pizza = ventas_tipo(ventas, precios)
+iTotal_pizza = ventas_tipo_i(ventas, precios)
 print(f"Total ventas (ciclo): {iTotal_pizza}")
 
 ```
