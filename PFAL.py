@@ -1,5 +1,6 @@
 import numpy as np
 import prettytable as pt
+import math
 
 def verificar(vector):
   """Verifica que todos los elementos de un vector sean enteros positivos"""
@@ -74,6 +75,15 @@ class PFAL:
       print("No se puede agregar")
       return -1
     
+  def pizzas_posibles(self):
+    """Returns the number of each type of pizza that can be made with the current inventory."""
+    result = []
+    # Crea una lista con el numero mas pequeño de los ingredientes en el inventario dividido por los ingredientes de cada pizza.
+    for i in range(len(self.pizzas)):
+      result.append(math.floor(min(self.inventario / self.pizzas[i])))
+    return result
+    
+
   def str_ingredientes(self, tipo):
     """Muestra una cadena de texto con los ingredientes necesarios para crear una pizza"""
     pretty_table = pt.PrettyTable()
@@ -99,17 +109,24 @@ class PFAL:
     """Muestra una cadena de texto con las ventas por tipo de pizza"""
     pretty_table = pt.PrettyTable()
     pretty_table.field_names = ["Pizza 1", "Pizza 2", "Pizza 3"]
-    pretty_table.add_row(self.ventasTipo())
+    pretty_table.add_row(self.ventas_tipo())
     return pretty_table.get_string()
+  
+  def str_pizzasPosibles(self):
+    """Muestra una cadena de texto con las ventas por tipo de pizza"""
+    pretty_table = pt.PrettyTable()
+    pretty_table.field_names = ["Pizza 1", "Pizza 2", "Pizza 3"]
+    pretty_table.add_row(self.pizzas_posibles())
+    return pretty_table.get_string()
+  
 
 print("Libreria PFAL cargada correctamente")
 
 if __name__ == "__main__":
   print("Hello world!")
   pfal = PFAL()
+
   print(pfal.str_inventario())
-  tipo = 2
-  a = np.array([0,0,0])
-  a[tipo] = 1
-  print(a + pfal.inventario)
-  print(a)
+  print(pfal.pizzas)
+  print(pfal.pizzas_posibles())
+  print(pfal.str_pizzasPosibles())

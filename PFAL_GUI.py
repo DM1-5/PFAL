@@ -31,7 +31,7 @@ class PizzaFrame(ctk.CTkFrame):
         self.button_descontar.grid(row=6, column=0, padx=10, pady=10)
 
         self.button_comprar = ctk.CTkButton(self, text="Comprar", font=("PoetsenOne", 12), command=self.comprar)
-        self.button_comprar .grid(row=7, column=0, padx=10, pady=10)
+        self.button_comprar .grid(row=8, column=0,padx=10, pady=10)
 
     def comprar(self):
         """Metodo que se ejecuta al hacer click en el boton comprar, llama al metodo compra de la instancia de la clase App"""
@@ -75,6 +75,9 @@ class InfoFrame(ctk.CTkFrame):
         self.ventas_tipo_label = ctk.CTkLabel(self, text="Ventas por tipo:\n"+pf.str_ventasTipo(), fg_color="transparent", font=("Fira Code Light", 12))
         self.ventas_tipo_label.grid(row=4, column=0, padx=10, pady=10)
 
+        self.pizzas_posibles_label = ctk.CTkLabel(self, text="Pizzas posibles:\n"+pf.str_pizzasPosibles(), fg_color="transparent", font=("Fira Code Light", 12))
+        self.pizzas_posibles_label.grid(row=5, column=0, padx=10, pady=10)
+
     def actualizar(self): 
         """Metodo que actualiza los labels con la informacion de las ventas y el inventario"""
         print("Actualizando labels")
@@ -82,6 +85,7 @@ class InfoFrame(ctk.CTkFrame):
         self.ventas_label.configure(text="Cantidad vendida:\n"+pf.str_ventas())
         self.total_ventas_label.configure(text=f"Saldo total ventas: {pf.total_ventas()}")
         self.ventas_tipo_label.configure(text="Ventas por tipo:\n"+pf.str_ventasTipo())
+        self.pizzas_posibles_label.configure(text="Pizzas posibles:\n"+pf.str_pizzasPosibles())
 
 
     
@@ -162,7 +166,7 @@ class App(ctk.CTk):
 
         # Seccion de configuracion de la ventana principal
         self.title("PFAL")
-        self.geometry("500x600")
+        self.geometry("500x625")
         self.resizable(False, False)
         # Tema de la aplicacion
         ctk.set_default_color_theme("themes/marsh.json")

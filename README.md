@@ -170,10 +170,6 @@ print(f"Total ventas (ciclo): {iTotal_pizza}")
 
 ```
 
-### Resolución de sistemas
-
-A unas ganancias obtenidas calcular la cantidad de pizzas y sus tipos.
-
 ### ScreenShots
 
 ![Menu principal](img/principal.png)
@@ -184,15 +180,19 @@ A unas ganancias obtenidas calcular la cantidad de pizzas y sus tipos.
 
 ### [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter)
 
-Libreria para la creacion de la interfaz grafica
+Libreria para la creacion de la interfaz grafica.
 
 ### [Numpy](https://numpy.org/)
 
-Libreria que contiene los metodos para la creacion de las estructuras y operaciones de algebra lineal implementadas
+Libreria que contiene los metodos para la creacion de las estructuras y operaciones de algebra lineal implementadas.
 
 ### [PrettyTable](https://pypi.org/project/prettytable/)
 
 Libreria para organizar en tablas ascii la información.
+
+### [math](https://docs.python.org/3/library/math.html)
+
+Modulo propio de python para operaciones matematicas avanzadas.
 
 ## Instalacion
 
@@ -232,17 +232,6 @@ Archivo principal del proyecto, construido a partir de OOP, contiene la estructu
 - [TkinterDesigner (No utilizado en el proyecto)](https://github.com/ParthJadhav/Tkinter-Designer)
 - [Tipografia (Fira Code)](https://github.com/tonsky/FiraCode)
   - [Google Fonts](https://fonts.google.com/specimen/Fira+Code)
-
-## Todo
-
-- [x] Creacion de la pantalla de compra
-- [x] Documentar el codigo.
-- [ ] Creacion de la ventana de resolucion de sistemas
-
-### Opcionales
-
-- [ ] Añadir iconos y/o imagenes
-- [ ] Pensar en una ventana de administracion
 
 >[!NOTE]
 > Este proyecto no pretende demostrar buenas practicas de programacion, ni en la libreria construida, ni en su interfaz grafica. Primera y ultima vez utilizando CustomTkinter.
