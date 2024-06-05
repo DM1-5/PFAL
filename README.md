@@ -78,7 +78,7 @@ print(f"Inventario+ (numpy):{nInventario} ")
 def comprar_i(inventario, compras):
     # ciclo iterando el vector desde el indice 
     resultado = [] # Creacion de un vector vacio para el resultado
-    for i in range(len(ventas)):
+    for i in range(len(inventario)):
         resultado.append(inventario[i] + compras[i]) # Añade la suma de cada componente al nuevo vector
     return resultado # Retorna el vector resultante
 
@@ -110,7 +110,7 @@ print(f"Inventario- (ciclo): {iDescuento}")
 def fabricar_i(inventario, tipo):
     # ciclo iterando el vector desde el indice 
     resultado = [] # Creacion de un vector vacio para el resultado
-    for i in range(len(ventas)):
+    for i in range(len(inventario)):
         resultado.append(inventario[i] - pizza[tipo])# Añade la resta de cada componente al nuevo vector
     return resultado # Retorna el vector resultante
 
@@ -136,7 +136,8 @@ def total_ventas_i(ventas, precios):
     # ciclo iterando el vector desde el indice 
     total = 0 # Creacion de una variable para almacenar el total
     for i in range(len(ventas)):
-        total += ventas[i] * precios[i] # Suma al total la multiplicacion de cada componente en la posicion i de ventas y precios.
+        total += ventas[i] * precios[i]
+        total = total + (ventas[i] * precios[i]) # Suma al total la multiplicacion de cada componente en la posicion i de ventas y precios.
     return total # Retorna el valor resultante
 
 itotal_ventas = total_ventas_i(ventas, precios)

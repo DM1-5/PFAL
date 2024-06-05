@@ -76,10 +76,12 @@ class PFAL:
       return -1
     
   def pizzas_posibles(self):
-    """Returns the number of each type of pizza that can be made with the current inventory."""
+    """Retorna el numero de pizzas que se pueden realizar con el inventario actual."""
     result = []
     # Crea una lista con el numero mas pequeño de los ingredientes en el inventario dividido por los ingredientes de cada pizza.
     for i in range(len(self.pizzas)):
+      #print(f"Iteracion {i+1}: \n")
+      #print(self.inventario / self.pizzas[i])
       result.append(math.floor(min(self.inventario / self.pizzas[i])))
     return result
     
@@ -125,8 +127,5 @@ print("Libreria PFAL cargada correctamente")
 if __name__ == "__main__":
   print("Hello world!")
   pfal = PFAL()
-
-  print(pfal.str_inventario())
-  print(pfal.pizzas)
-  print(pfal.pizzas_posibles())
+  print("----------------------Llamado a pizzas posibles----------------------")
   print(pfal.str_pizzasPosibles())
